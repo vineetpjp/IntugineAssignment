@@ -2,6 +2,7 @@ import React from "react";
 import "./index.scss";
 import logo from "FrontendAssets/logo.svg";
 import profile from "FrontendAssets/profile.svg";
+import { ImageBackground } from "components/utils/index";
 
 const Header = () => {
   return (
@@ -23,9 +24,9 @@ const Header = () => {
           <b>Transports</b>
         </div>
         <div style={{ padding: 0 }}>
-          <div className="header-profile-image">
+          <ImageBackground bckcolor="rgba(0, 0, 0, 0.24)">
             <img src={profile} alt="profile" />
-          </div>
+          </ImageBackground>
         </div>
         <div className="down">
           <b>&#709;</b>
