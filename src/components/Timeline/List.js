@@ -3,7 +3,7 @@ import { ListContainer } from "components/utils";
 
 const List = () => {
   return (
-    <ListContainer>
+    <>
       <div className="timeline--list timeline--list__active">
         <p>Delivered</p>
         <div className="timeline--list__flex">
@@ -11,7 +11,7 @@ const List = () => {
           <p className="timeline--list__time">04:20</p>
         </div>
       </div>
-    </ListContainer>
+    </>
   );
 };
 

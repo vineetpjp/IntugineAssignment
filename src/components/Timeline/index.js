@@ -9,30 +9,32 @@ import "./index.scss";
 
 const Timeline = () => {
   return (
-    <ContainerOutline>
-      <section className="timeline">
-        <div className="timeline--destination">
-          <img src={Destination} />
-        </div>
-        <div className="timeline--lists">
-          <div>
-            <List />
+    <div className="timeline-container">
+      <ContainerOutline>
+        <section className="timeline">
+          <div className="timeline--destination">
+            <img src={Destination} />
           </div>
-          <div>
-            <List />
+          <div className="timeline--lists">
+            <div>
+              <List />
+            </div>
+            <div>
+              <List />
+            </div>
+            <div>
+              <List />
+            </div>
+            <div>
+              <List />
+            </div>
           </div>
-          <div>
-            <List />
+          <div className="timeline--warehouse">
+            <img src={Warehouse} className="timeline--warehouse" />
           </div>
-          <div>
-            <List />
-          </div>
-        </div>
-        <div className="timeline--warehouse">
-          <img src={Warehouse} className="timeline--warehouse" />
-        </div>
-      </section>
-    </ContainerOutline>
+        </section>
+      </ContainerOutline>
+    </div>
   );
 };
 

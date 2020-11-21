@@ -1,7 +1,13 @@
 :root {
   --primary-color: rgba(28, 188, 241, 0.103);
   --image-background: #d5f2fd;
+  --border-color-2: #d5f2fd;
   --active-color: rgba(39, 156, 39, 0.575);
+  --border-color: #e8f8fe;
+}
+
+.timeline-container {
+  width: 30%;
 }
 
 .timeline {
@@ -48,11 +54,11 @@
 
   font-size: 0.7rem;
   font-weight: bold;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--border-color);
   padding: 0.7rem 1rem;
   margin-left: 3rem;
   margin-bottom: 1rem;
-  width: 25rem;
+  // width: 25rem;
 
   color: rgba(0, 0, 0, 0.555);
 
@@ -92,6 +98,7 @@
     width: 1.7rem;
     height: 0;
     border: 1px solid rgba(74, 197, 238, 0.712);
+    background-color: rgb(74, 197, 238);
     position: absolute;
   }
 }
