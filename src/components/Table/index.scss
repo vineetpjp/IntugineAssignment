@@ -44,6 +44,7 @@ td.table-border-right {
 
 .table-lists {
   overflow: scroll;
+  cursor: pointer;
   overflow-x: auto;
   max-height: 60vh;
 }
