@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ContainerOutline } from "components/utils/index";
 import "./index.scss";
 import List from "./List";
@@ -8,6 +8,12 @@ const Table = ({ currentStatusArr, updateTimelineStatus }) => {
   const updateActiveList = (code) => {
     setActiveList(code);
   };
+  useEffect(() => {
+    if (currentStatusArr.length) {
+      const code = currentStatusArr[0].awbno;
+      updateActiveList(code);
+    }
+  }, [currentStatusArr]);
   const renderList = () => {
     return currentStatusArr.map((item, index) => {
       return (
