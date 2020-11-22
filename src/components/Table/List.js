@@ -1,6 +1,6 @@
 import React from "react";
 
-const List = ({ item, updateTimelineStatus }) => {
+const List = ({ item, updateTimelineStatus, activeList, updateActiveList }) => {
   const {
     awbno,
     carrier: transporter,
@@ -20,8 +20,15 @@ const List = ({ item, updateTimelineStatus }) => {
 
   return (
     <tr
-      className="table-list border_bottom table-list-active"
-      onClick={() => updateTimelineStatus(scan)}
+      className={
+        awbno == activeList
+          ? "table-list border_bottom table-list-active"
+          : "table-list border_bottom"
+      }
+      onClick={() => {
+        updateTimelineStatus(scan, awbno);
+        updateActiveList(awbno);
+      }}
     >
       <td className="table-border-left">{awbno}</td>
       <td>{transporter}</td>

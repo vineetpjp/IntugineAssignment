@@ -49,6 +49,10 @@ td.table-border-right {
   max-height: 60vh;
 }
 
+.table-list-active {
+  background-color: var(--border-color-2);
+}
+
 // #table td:not(:first-child) {
 // border: 2px solid black; //var(--border-color);
 // padding: 0.8rem;

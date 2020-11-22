@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { ContainerOutline } from "components/utils/index";
 import "./index.scss";
 import List from "./List";
 
 const Table = ({ currentStatusArr, updateTimelineStatus }) => {
+  const [activeList, setActiveList] = useState("");
+  const updateActiveList = (code) => {
+    setActiveList(code);
+  };
   const renderList = () => {
     return currentStatusArr.map((item, index) => {
       return (
         <List
+          activeList={activeList}
+          updateActiveList={updateActiveList}
           key={index}
           item={item}
           updateTimelineStatus={updateTimelineStatus}
