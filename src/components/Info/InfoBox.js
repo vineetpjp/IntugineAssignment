@@ -1,13 +1,19 @@
 import React from "react";
 
-const InfoBox = () => {
+const InfoBox = ({ active, infoValue, infoKey, onCounterClick }) => {
+  let css;
+  if (active == infoKey) {
+    css = "info--box info--box__active";
+  } else {
+    css = "info--box";
+  }
   return (
-    <div className="info--box info--box__active">
+    <div className={css} onClick={() => onCounterClick(infoKey)}>
       <div>
-        <h4 className="info--box__text1">DEL</h4>
+        <h4 className="info--box__text1">{infoKey}</h4>
       </div>
       <div className="info--box__text2">
-        <p>916</p>
+        <p>{infoValue}</p>
       </div>
     </div>
   );

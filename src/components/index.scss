@@ -1,8 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --active: rgba(89, 223, 233, 0.144);
+  --paddingUpDown: 3rem 0;
+  --primary-color: rgba(28, 188, 241, 0.103);
+  --image-background: #d5f2fd;
+  --border-color-2: #d5f2fd;
+  --active-color: rgba(39, 156, 39, 0.575);
+  --border-color: #e8f8fe;
+}
+body {
+  font-family: Roboto, Arial, sans-serif;
+}
+
 .container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 5rem;
 }
 
 ::-webkit-scrollbar {

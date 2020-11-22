@@ -1,26 +1,43 @@
 import React from "react";
 import { ListContainer } from "components/utils";
 
-const List = () => {
+const List = ({ item, updateTimelineStatus }) => {
+  const {
+    awbno,
+    carrier: transporter,
+    from: source,
+    to: destination,
+    carrier: brand,
+    pickup_date,
+    current_status,
+    scan,
+  } = item;
+  if (item.extra_fields) {
+    var { expected_delivery_date } = item.extra_fields;
+  } else {
+    expected_delivery_date = "";
+  }
+  if (!awbno) return null;
+
   return (
-    // <ListContainer padding="1rem 0.5rem">
-    // <tr className="table-list-container table-list-items">
-    <tr className="table-list border_bottom">
-      <td className="table-border-left">#273126375</td>
-      <td>DTDC</td>
-      <td>Bangalore</td>
-      <td>Delhi</td>
-      <td>USPA</td>
-      <td>01/07/2019</td>
-      <td>01/07/2019</td>
+    <tr
+      className="table-list border_bottom"
+      onClick={() => updateTimelineStatus(scan)}
+    >
+      <td className="table-border-left">{awbno}</td>
+      <td>{transporter}</td>
+      <td>{source}</td>
+      <td>{destination}</td>
+      <td>{brand}</td>
+      <td>{pickup_date}</td>
+      <td>{expected_delivery_date}</td>
       <td
         className="table-border-right"
         style={{ color: " rgba(39, 156, 39, 0.575)" }}
       >
-        Delivered
+        {current_status}
       </td>
     </tr>
-    // </ListContainer>
   );
 };
 
