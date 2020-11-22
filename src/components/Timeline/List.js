@@ -13,7 +13,7 @@ const List = ({ location, time, index }) => {
       </div>
     </>
   );
-  if (index == 0) {
+  if (index === 0) {
     return (
       <>
         <div className="timeline--list timeline--list__active">{content}</div>

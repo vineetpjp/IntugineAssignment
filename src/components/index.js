@@ -4,7 +4,6 @@ import Info from "components/Info";
 import Timeline from "./Timeline";
 import Table from "./Table";
 
-// import { data } from "Network/data.json";
 import fetchData from "Network/index";
 import "./index.scss";
 const Intugine = () => {
@@ -35,7 +34,6 @@ const Intugine = () => {
 
   const getData = async () => {
     const response = await fetchData();
-    console.log(response.data);
     setData(response.data);
   };
 
@@ -49,14 +47,13 @@ const Intugine = () => {
   };
 
   const updateTimelineStatus = (scan) => {
-    console.log(scan);
     setTimelineStatus(scan);
   };
 
   const updateCurrentList = (active) => {
     let currentStatus = [];
     data.forEach((item) => {
-      if (item.current_status_code == active) {
+      if (item.current_status_code === active) {
         currentStatus.push(item);
       }
     });

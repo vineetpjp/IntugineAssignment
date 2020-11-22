@@ -6,9 +6,10 @@ const Info = ({ counters, active, onCounterClick }) => {
   const renderCounters = () => {
     let arr = [];
     for (const [key, value] of Object.entries(counters)) {
-      if (key == active) {
+      if (key === active) {
         arr.push(
           <InfoBox
+            key={key}
             infoKey={key}
             infoValue={value}
             active={active}
@@ -18,6 +19,7 @@ const Info = ({ counters, active, onCounterClick }) => {
       } else {
         arr.push(
           <InfoBox
+            key={key}
             infoKey={key}
             infoValue={value}
             active="false"

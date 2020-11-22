@@ -2,7 +2,7 @@ import React from "react";
 
 const InfoBox = ({ active, infoValue, infoKey, onCounterClick }) => {
   let css;
-  if (active == infoKey) {
+  if (active === infoKey) {
     css = "info--box info--box__active";
   } else {
     css = "info--box";

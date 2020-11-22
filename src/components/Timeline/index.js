@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerOutline, ImageBackground } from "components/utils/index";
+import { ContainerOutline } from "components/utils/index";
 import List from "./List";
 
 import Warehouse from "FrontendAssets/warehouse.svg";
@@ -14,8 +14,8 @@ const Timeline = ({ timelineStatus }) => {
     }
     return timelineStatus.map((item, index) => {
       return (
-        <div>
-          <List {...item} active="false" index={index} />
+        <div key={index}>
+          <List key={index} {...item} active="false" index={index} />
         </div>
       );
     });
