@@ -24,6 +24,19 @@ body {
   margin-bottom: 5rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .timeline-container {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+  .table-container {
+    width: 90%;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 7px;
 }
