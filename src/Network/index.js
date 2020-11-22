@@ -1,18 +1,24 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function Data(props) {
-  const [data, setData] = useState(null);
+const Data = async () => {
+  const headers = {
+    "Content-Type": "application/json",
+    Authorization: "Bearer tTU3gFVUdP",
+  };
+  const dataa = {
+    email: "vineet981013@gmail.com",
+  };
 
-  useEffect(() => {
-    (async () => {
-      const response = await axios.post();
-      setData(response.data);
-    })();
-  }, []);
+  const response = await axios.post(
+    "https://93870v1pgk.execute-api.ap-south-1.amazonaws.com/latest/shipments/vineet",
+    dataa,
+    { headers }
+  );
 
-  if (data === null) {
+  if (response.data === null) {
     return "Loading...";
   }
-  return data;
-}
+  return response.data;
+};
+
+export default Data;

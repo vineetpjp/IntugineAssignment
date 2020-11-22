@@ -4,10 +4,11 @@ import Info from "components/Info";
 import Timeline from "./Timeline";
 import Table from "./Table";
 
-import { data } from "Network/data.json";
-
+// import { data } from "Network/data.json";
+import fetchData from "Network/index";
 import "./index.scss";
 const Intugine = () => {
+  const [data, setData] = useState([]);
   const [counters, setCounters] = useState({
     DEL: 0,
     INT: 0,
@@ -21,11 +22,22 @@ const Intugine = () => {
   const [timelineStatus, setTimelineStatus] = useState([]);
 
   useEffect(() => {
-    count();
+    getData();
   }, []);
+
+  useEffect(() => {
+    count();
+  }, [data]);
+
   useEffect(() => {
     updateCurrentList(activeCounter);
-  }, [activeCounter]);
+  }, [activeCounter, data]);
+
+  const getData = async () => {
+    const response = await fetchData();
+    console.log(response.data);
+    setData(response.data);
+  };
 
   const count = () => {
     let counts = { DEL: 0, INT: 0, OOD: 0, DEX: 0, NFI: 0, UND: 0 };
@@ -37,6 +49,7 @@ const Intugine = () => {
   };
 
   const updateTimelineStatus = (scan) => {
+    console.log(scan);
     setTimelineStatus(scan);
   };
 

@@ -1,5 +1,4 @@
 import React from "react";
-import { ListContainer } from "components/utils";
 
 const List = ({ item, updateTimelineStatus }) => {
   const {
@@ -21,7 +20,7 @@ const List = ({ item, updateTimelineStatus }) => {
 
   return (
     <tr
-      className="table-list border_bottom"
+      className="table-list border_bottom table-list-active"
       onClick={() => updateTimelineStatus(scan)}
     >
       <td className="table-border-left">{awbno}</td>
