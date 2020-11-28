@@ -3,6 +3,7 @@ import Header from "components/Header";
 import Info from "components/Info";
 import Timeline from "./Timeline";
 import Table from "./Table";
+import staticData from "Network/data.json";
 
 import fetchData from "Network/index";
 import "./index.scss";
@@ -21,7 +22,8 @@ const Intugine = () => {
   const [timelineStatus, setTimelineStatus] = useState([]);
 
   useEffect(() => {
-    getData();
+    // getData();
+    setData(staticData.data);
   }, []);
 
   useEffect(() => {
